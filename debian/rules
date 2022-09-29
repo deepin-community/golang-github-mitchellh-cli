@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --buildsystem=golang --with=golang
+
+
+## Sporadic test failures in "TestCLIRun_printCommandHelpSubcommands"
+## https://github.com/mitchellh/cli/issues/30
+override_dh_auto_test:
+	dh_auto_test
